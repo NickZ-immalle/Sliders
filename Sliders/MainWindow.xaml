@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Slider x:Name="horizSlider" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.216,1.038" Margin="125,10,0,0" Height="21" Width="392"/>
-        <Slider x:Name="vertSlider" HorizontalAlignment="Left" Height="26" Margin="125,31,0,0" VerticalAlignment="Top" Width="392"/>
+        <Slider x:Name="horizSlider" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.216,1.038" Margin="125,10,0,0" Height="21" Width="392" ValueChanged="horizSlider_ValueChanged_1"/>
+        <Slider x:Name="vertSlider" HorizontalAlignment="Left" Height="26" Margin="125,31,0,0" VerticalAlignment="Top" Width="392" ValueChanged="vertSlider_ValueChanged_1"/>
         <Label x:Name="horizLabel" Content="Label" HorizontalAlignment="Left" Height="26" Margin="0,10,0,0" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="vertLabel" Content="Label" HorizontalAlignment="Left" Height="29" Margin="0,36,0,0" VerticalAlignment="Top" Width="125"/>
         <Canvas x:Name="paperCanvas" HorizontalAlignment="Left" Height="254" VerticalAlignment="Top" Width="517" Margin="0,65,0,0" Background="#FFB2B2B2"/>

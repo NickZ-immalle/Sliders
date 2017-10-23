@@ -38,22 +38,6 @@ namespace Sliders
             CreateEllipse();
         }
 
-        private void horizSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            int horizontal = Convert.ToInt32(horizSlider.Value);
-            horizLabel.Content = Convert.ToString(horizontal);
-            UpdateEllipse();
-
-        }
-
-        private void vertSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            int Vertical = Convert.ToInt32(vertSlider.Value);
-            vertLabel.Content = Convert.ToString(Vertical);
-            UpdateEllipse();
-
-        }
-
         private void CreateEllipse()
         {
             ellipse = new Ellipse();
@@ -68,6 +52,20 @@ namespace Sliders
         {
             ellipse.Width = horizSlider.Value;
             ellipse.Height = vertSlider.Value;
+        }
+
+        private void vertSlider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int Vertical = Convert.ToInt32(vertSlider.Value);
+            vertLabel.Content = Convert.ToString(Vertical);
+            UpdateEllipse();
+        }
+
+        private void horizSlider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int horizontal = Convert.ToInt32(horizSlider.Value);
+            horizLabel.Content = Convert.ToString(horizontal);
+            UpdateEllipse();
         }
     }
 }
