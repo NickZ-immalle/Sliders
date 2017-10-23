@@ -20,9 +20,54 @@ namespace Sliders
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Ellipse ellipse;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            vertSlider.Minimum = 0;
+            vertSlider.Maximum = paperCanvas.Height;
+
+            horizSlider.Minimum = 0;
+            horizSlider.Maximum = paperCanvas.Width;
+
+            vertLabel.Content = Convert.ToString(vertSlider.Value);
+            horizLabel.Content = Convert.ToString(horizSlider.Value);
+
+            CreateEllipse();
+        }
+
+        private void horizSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int horizontal = Convert.ToInt32(horizSlider.Value);
+            horizLabel.Content = Convert.ToString(horizontal);
+            UpdateEllipse();
+
+        }
+
+        private void vertSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int Vertical = Convert.ToInt32(vertSlider.Value);
+            vertLabel.Content = Convert.ToString(Vertical);
+            UpdateEllipse();
+
+        }
+
+        private void CreateEllipse()
+        {
+            ellipse = new Ellipse();
+            ellipse.Width = horizSlider.Value;
+            ellipse.Height = vertSlider.Value;
+            ellipse.Stroke = new SolidColorBrush(Colors.RosyBrown);
+            ellipse.Fill = new SolidColorBrush(Colors.RosyBrown);
+            ellipse.Margin = new Thickness(0, 0, 0, 0);
+            paperCanvas.Children.Add(ellipse);
+        }
+        private void UpdateEllipse()
+        {
+            ellipse.Width = horizSlider.Value;
+            ellipse.Height = vertSlider.Value;
         }
     }
 }
